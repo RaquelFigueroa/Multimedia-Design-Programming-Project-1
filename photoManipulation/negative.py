@@ -1,6 +1,8 @@
 #Name: Raquel Figueroa
 #Date Modified: 10 February 2016
-#Desription: Finds the median color values for each filter to form a photo without the pesky tourist
+#Desription: First, finds the median color values for each filter to form a photo without the pesky tourist.
+#Then median filtered image is converted into its negative color form
+#GitHub: https://github.com/RaquelFigueroa/Multimedia-Design-Programming-Project-1.git
 
 
 pic1 = makePicture("/home/rfig/cst_205/project_1/Project1Images/1.png")

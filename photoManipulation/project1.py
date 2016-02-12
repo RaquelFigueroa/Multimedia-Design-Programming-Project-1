@@ -1,6 +1,7 @@
 #Name: Raquel Figueroa
 #Date Modified: 10 February 2016
-#Description: Averages all nine photos into one photo.
+#Desription: Finds the median color values for each filter to form a photo without the pesky tourist
+#GitHub: https://github.com/RaquelFigueroa/Multimedia-Design-Programming-Project-1.git
 
 
 pic1 = makePicture("/home/rfig/cst_205/project_1/Project1Images/1.png")
@@ -13,13 +14,23 @@ pic7 = makePicture("/home/rfig/cst_205/project_1/Project1Images/7.png")
 pic8 = makePicture("/home/rfig/cst_205/project_1/Project1Images/8.png")
 pic9 = makePicture("/home/rfig/cst_205/project_1/Project1Images/9.png")
 
+#show(pic1)
+#show(pic2)
+#show(pic3)
+#show(pic4)
+#show(pic5)
+#show(pic6)
+#show(pic7)
+#show(pic8)
+#show(pic9)
+
 #get photo height/width information
 height = getHeight(pic1) #557
 
 width = getWidth(pic1) #495 px
 
 #create new empty photo with H=557 and W=495
-avePic = makeEmptyPicture(width, height)
+newPic = makeEmptyPicture(width, height)
 
 for x in range(width):
   for y in range(height):
@@ -32,7 +43,7 @@ for x in range(width):
     px7 = getPixel(pic7, x, y)
     px8 = getPixel(pic8, x, y)
     px9 = getPixel(pic9, x, y)
-    pxAve = getPixel(avePic, x, y)
+    pxNew = getPixel(newPic, x, y)
     
     redValues = []
     redValues.append(getRed(px1))
@@ -65,16 +76,14 @@ for x in range(width):
     blueValues.append(getBlue(px6))
     blueValues.append(getBlue(px7))
     blueValues.append(getBlue(px8))
-    blueValues.append(getBlue(px9))
     
-    redAve = sum(redValues)/len(redValues)
-    greenAve = sum(greenValues)/len(greenValues)
-    blueAve = sum(blueValues)/len(blueValues)
+    redValues.sort()
+    greenValues.sort()
+    blueValues.sort()
     
-    aveColor = makeColor(redAve, greenAve, blueAve)
-    setColor(pxAve, aveColor)
+    newColor = makeColor(redValues[4], greenValues[4], blueValues[4])
+    setColor(pxNew, newColor)
        
        
-show(avePic)
-
+show(newPic)#Median photo
 
