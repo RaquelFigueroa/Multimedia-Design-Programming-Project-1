@@ -13,15 +13,6 @@ pic7 = makePicture("/home/rfig/cst_205/project_1/Project1Images/7.png")
 pic8 = makePicture("/home/rfig/cst_205/project_1/Project1Images/8.png")
 pic9 = makePicture("/home/rfig/cst_205/project_1/Project1Images/9.png")
 
-#show(pic1)
-#show(pic2)
-#show(pic3)
-#show(pic4)
-#show(pic5)
-#show(pic6)
-#show(pic7)
-#show(pic8)
-#show(pic9)
 
 #get photo height/width information
 height = getHeight(pic1) #557
@@ -80,9 +71,13 @@ for x in range(width):
     greenValues.sort()
     blueValues.sort()
     
-    newColor = makeColor(redValues[4], greenValues[4], blueValues[4])
+    redColor = redValues[4]
+    greenColor = greenValues[4]
+    blueColor =  blueValues[4]
+    
+    newColor = makeColor(255-redColor, 255-greenColor, 255-blueColor)
     setColor(pxNew, newColor)
        
        
-show(newPic)#Median photo
+show(newPic)#Median photo in negative color form
 
